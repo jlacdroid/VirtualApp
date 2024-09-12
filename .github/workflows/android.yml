@@ -28,5 +28,5 @@ jobs:
         working-directory: ./VirtualApp
         run: |
           chmod +x gradlew
-          ./gradlew build
+          ./gradlew build --java-home /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.24-8/
 
