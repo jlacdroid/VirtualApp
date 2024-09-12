@@ -35,7 +35,7 @@ jobs:
       #     cmdline-tools-version: 9123335
 
       - name: Prepare
-        # working-directory: ./VirtualApp
+        working-directory: ./VirtualApp
         run: |
           # echo "android.useAndroidX=true" >> gradle.properties
           gradle tasks
@@ -43,6 +43,6 @@ jobs:
 
 
       - name: Build with Gradle
-        # working-directory: ./VirtualApp
+        working-directory: ./VirtualApp
         run: |
           gradle build
