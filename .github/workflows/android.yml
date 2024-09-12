@@ -44,7 +44,7 @@ jobs:
         run: |
           # echo "android.useAndroidX=true" >> gradle.properties
           echo "ndk.dir=/usr/local/lib/android/sdk/ndk/27.1.12297006" >> ndk.dir
-          export JAVA_HOME=
+          export JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.24-8/
           gradle tasks
           gradle dependencies
 
