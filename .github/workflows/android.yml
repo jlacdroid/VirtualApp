@@ -24,15 +24,10 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Prepare
-        working-directory: ./VirtualApp
-        run: |
-          ls -al /usr/lib/jvm/temurin-11-jdk-amd64
-
-      - name: Setup Gradle 4.1
+      - name: Setup Gradle 4.8
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "4.1"
+          gradle-version: "4.8"
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
@@ -49,8 +44,6 @@ jobs:
         run: |
           # echo "android.useAndroidX=true" >> gradle.properties
           echo "ndk.dir=/usr/local/lib/android/sdk/ndk/27.1.12297006" >> ndk.dir
-          export JAVA_HOME=/usr/lib/jvm/temurin-11-jdk-amd64/
-          export PATH=$PATH:$JAVA_HOME/bin
           gradle tasks
           gradle dependencies
 
