@@ -34,6 +34,10 @@ jobs:
         with:
           cmdline-tools-version: 9123335
 
+      - uses: nttld/setup-ndk@v1
+        with:
+          ndk-version: r26d          
+
       - name: Prepare
         working-directory: ./VirtualApp
         run: |
