@@ -35,23 +35,20 @@ jobs:
           cmdline-tools-version: 9123335
 
       - uses: nttld/setup-ndk@v1
-        id: setup-ndk
         with:
           ndk-version: r26d          
-          link-to-sdk: false
+          link-to-sdk: true
 
       - name: Prepare
         working-directory: ./VirtualApp
         run: |
           # echo "android.useAndroidX=true" >> gradle.properties
+          echo "ndk.dir=/usr/local/lib/android/sdk/ndk/27.1.12297006" >> ndk.dir
           gradle tasks
           gradle dependencies
-        env:
-          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
+
 
       - name: Build with Gradle
         working-directory: ./VirtualApp
         run: |
           gradle build
-        env:
-          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
