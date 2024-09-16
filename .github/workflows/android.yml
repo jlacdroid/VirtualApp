@@ -44,6 +44,7 @@ jobs:
         run: |
           # echo "android.useAndroidX=true" >> gradle.properties
           echo "ndk.dir=/usr/local/lib/android/sdk/ndk/27.1.12297006" >> ndk.dir
+          android update sdk --no-ui --all --filter "android-30"
           gradle tasks
           gradle dependencies
 
